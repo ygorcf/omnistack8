@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const routes = require('./routes')
 
@@ -10,6 +11,7 @@ mongoose.connect('mongodb+srv://ygor:gatao@clustergatao-4fpbd.gcp.mongodb.net/om
 })
 
 server.use(express.json())
+server.use(cors())
 server.use(routes)
 
 server.listen(3333)
